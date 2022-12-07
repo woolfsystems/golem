@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { GolemContext, GolemState } from "../components/Golem"
+import { GolemContext, GolemState } from "../types/Golem"
 
 export const useGolem = (): GolemState => {
     const gc = useContext(GolemContext)

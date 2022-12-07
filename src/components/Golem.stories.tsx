@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react'
 import { useGolem } from '../hooks/useGolem'
-import { Golem, GolemContext } from './Golem'
+import { Golem } from './Golem'
 
 export default {
   component: Golem,
@@ -13,7 +13,7 @@ export const Inactive = ()=>
   </Golem>
 
 export const NoConfig = ()=>{
-  const gc = useContext(GolemContext)
+  const gc = useGolem()
   useEffect(()=>{
     console.log('GC',gc)
   },[gc])
@@ -34,7 +34,7 @@ const ValidChild = ()=>{
 export const Valid = ()=>{
   
 
-  return <Golem requireAuth getToken config={{
+  return <Golem loader={<div>loading...</div>} requireAuth getToken config={{
     domain: 'fnord.eu.auth0.com',
     clientId: 'x4fUKiuDY8cetGbvsWIBnI1Hnoash5cS'
   }}>
